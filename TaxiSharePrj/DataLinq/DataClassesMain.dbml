@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TxShareDB" Class="DataClassesMainDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.sdfsdfsdf;Initial Catalog=TxShareDB;Integrated Security=True" SettingsObjectName="TaxiSharePrj.Properties.Settings" SettingsPropertyName="TxShareDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_Notification" Member="TBL_Notifications">
+    <Type Name="TBL_Notification">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NotifCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NotifDsc" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="SepdRecType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_Users" Member="TBL_Users">
+    <Type Name="TBL_User">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AgencyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserPass" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="AgencyCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="AgencyManager" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GenerateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PartMain" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Part6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_RecPay" Member="TBL_RecPays">
+    <Type Name="TBL_RecPay">
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecPayCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReqCMCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReqType" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RetCostType" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SepCostCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PriceRecPay" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ModAccount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DscRecPay" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="RecPayDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RecPayTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ReqCustomer" Member="TBL_ReqCustomers">
+    <Type Name="TBL_ReqCustomer">
+      <Column Name="ReqCCode" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PartDest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReqCDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReqCTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReciveTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DalayTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ReqCDsc" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CarName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RetUserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_SepCost" Member="TBL_SepCosts">
+    <Type Name="TBL_SepCost">
+      <Column Name="SepCostCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PathType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PerReqer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PerSolver" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ReqMachine" Member="TBL_ReqMachines">
+    <Type Name="TBL_ReqMachine">
+      <Column Name="ReqMCode" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserCode" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReqMDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReqMTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartBeggining" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartDest" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelCust" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MobileCust" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ServicePrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RetUserCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReqMDsc" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CancelDsc" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CarName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MaxTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
